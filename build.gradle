@@ -1,0 +1,25 @@
+buildscript {
+    dependencies {
+        classpath files('plugin/ea-async-gradle-plugin.jar')
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+// IMPORTANT: Place assembled plugin JAR in the plugin directory for testing
+apply plugin: 'com.ea.async.gradle.plugin'
+
+group 'com.ea.async.gradle.test'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'com.ea.async:ea-async:1.2.3'
+}
